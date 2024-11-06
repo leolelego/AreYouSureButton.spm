@@ -9,9 +9,29 @@ add the SPM to your project : https://github.com/leolelego/AreYouSureButton.spm.
 
 add the selected `AreYouSureButton` in your Project. 
 
-Sample Code 
-[Sample](https://github.com/leolelego/AreYouSureButton.spm/blob/59f949884c5fce6be9560b9b504a61e927cc6023/Sources/AreYouSureButton.swift#L68C1-L90C2)
+### Sample Code 
 
 ```swift
-https://github.com/leolelego/AreYouSureButton.spm/blob/59f949884c5fce6be9560b9b504a61e927cc6023/Sources/AreYouSureButton.swift#L68C1-L90C2
+VStack{
+    // Simple button
+    AreYouSureButton("Delete") {
+        print("Action confirmed")
+    }
+    
+    // Customised one
+    AreYouSureButton(
+        confirmationTitle: "You sure about that?", // Optional
+        confirmationMessage: "are you REAALLY Sure?? ", // Optional
+        confirmationButton: "Yeap! ", // Optional
+        cancelButton: "Neaaaah" // Optional
+    ) {
+        print("Deleted !")
+    } label: {
+        HStack {
+            Image(systemName: "trash")
+            Text("Delete")
+                .bold().font(.title)
+        }
+    }
+}
 ```

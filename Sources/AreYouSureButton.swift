@@ -74,7 +74,10 @@ struct AreYouSureButton<Label: View> : View {
         
         // More complexe one
         AreYouSureButton(
-            confirmationTitle: "You sure about that?", confirmationMessage: "are you REAALLY Sure?? ", confirmationButton: "Yeap! ", cancelButton: "Neaaaah"
+            confirmationTitle: "You sure about that?", // Optional
+            confirmationMessage: "are you REAALLY Sure?? ", // Optional
+            confirmationButton: "Yeap! ", // Optional
+            cancelButton: "Neaaaah" // Optional
         ) {
             print("Deleted !")
         } label: {
@@ -83,8 +86,6 @@ struct AreYouSureButton<Label: View> : View {
                 Text("Delete")
                     .bold().font(.title)
             }
-            
         }
-        
     }
 }
