@@ -6,7 +6,7 @@
 //
 import SwiftUI
 
-struct AreYouSureButton<Label: View> : View {
+public struct AreYouSureButton<Label: View> : View {
     let action: () -> Void
     let label: () -> Label
     let confirmationTitle: String
@@ -17,7 +17,7 @@ struct AreYouSureButton<Label: View> : View {
     
     @State private var showConfirmation = false
     
-    var body: some View {
+    public var body: some View {
         Button {
             showConfirmation.toggle()
         } label: {
@@ -33,7 +33,7 @@ struct AreYouSureButton<Label: View> : View {
         }
     }
     
-    init(_ title: String,
+    public init(_ title: String,
          confirmationTitle: String? = nil,
          confirmationMessage: String? = nil,
          confirmationButton: String? = nil ,
@@ -48,7 +48,7 @@ struct AreYouSureButton<Label: View> : View {
                   label:  {Text(title).bold()})
     }
     
-    init(
+    public init(
         confirmationTitle: String? = nil,
         confirmationMessage: String? = nil,
         confirmationButton: String? = nil ,
